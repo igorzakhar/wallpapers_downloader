@@ -117,7 +117,7 @@ def save_image(image, filename):
 
 async def downloader(session, links):
     tasks = [
-        asyncio.ensure_future(download_wallpaper(session, link))
+        download_wallpaper(session, link)
         for link in links
     ]
     await asyncio.gather(*tasks)
